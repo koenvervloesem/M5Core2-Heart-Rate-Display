@@ -18,4 +18,4 @@ libraries:
 platform:
 	arduino-cli config add board_manager.additional_urls https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/arduino/package_m5stack_index.json
 	arduino-cli core update-index
-	arduino-cli core install m5stack:esp32
+	arduino-cli core install m5stack:esp32@1.0.5
