@@ -17,7 +17,7 @@ jobs:
         run: make platform
       - name: Install libraries
         run: make libraries
-.. .. - name: Install pyserial
-....... run: pip install pyserial
+      - name: Install pyserial
+        run: pip install pyserial
       - name: Compile Sketch
         run: make build
