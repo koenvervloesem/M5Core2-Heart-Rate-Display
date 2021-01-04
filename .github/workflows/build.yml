@@ -1,0 +1,19 @@
+---
+name: Build
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v1
+      - name: Setup Arduino CLI
+        uses: arduino/setup-arduino-cli@v1.1.1
+      - name: Install M5Stack platform
+        run: make platform
+      - name: Install libraries
+        run: make libraries
+      - name: Compile Sketch
+        run: make build
