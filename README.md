@@ -12,8 +12,8 @@ This is a proof of concept with basic functionality. It supports any heart rate 
 ## Requirements
 
 * Prepare your [Arduino IDE for the M5Stack Core2](https://docs.m5stack.com/#/en/arduino/arduino_core2_development).
-* Install the [Core2ez](https://github.com/M5ez/Core2ez) library as a ZIP file
-* Install the [NimBLE-Arduino](https://github.com/h2zero/NimBLE-Arduino) library from the library manager.
+* Install the [Core2ez](https://github.com/M5ez/Core2ez) library as a ZIP file.
+* Install the [M5Core2](https://github.com/m5stack/M5Core2) and [NimBLE-Arduino](https://github.com/h2zero/NimBLE-Arduino) libraries from the library manager.
 
 ## Building with arduino-cli
 There's a Makefile to ease the installation of the platform and libraries if you are using [arduino-cli](https://github.com/arduino/arduino-cli):
