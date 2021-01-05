@@ -5,7 +5,7 @@ SKETCH = M5Core2-Heart-Rate-Display.ino
 .PHONY: build clean libraries platform
 
 build:
-	arduino-cli compile -b $(BOARD) --build-path $(BUILD_DIR) --verbose $(SKETCH)
+	arduino-cli compile -b $(BOARD) --build-path $(BUILD_DIR) $(SKETCH)
 
 clean:
 	rm -r $(BUILD_DIR)
