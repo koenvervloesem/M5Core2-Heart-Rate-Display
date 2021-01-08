@@ -5,9 +5,11 @@ on:
   push:
     paths:
       - '**.ino'
+      - '.github/workflows/*.yml'
   pull_request:
     paths:
       - '**.ino'
+      - '.github/workflows/*.yml'
 
 jobs:
   cpplint:
