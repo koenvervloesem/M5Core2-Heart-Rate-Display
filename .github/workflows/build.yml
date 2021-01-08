@@ -18,7 +18,7 @@ jobs:
       - name: Install cpplint
         run: pip3 install cpplint
       - name: Run cpplint
-        run: cpplint --extensions=ino *.ino
+        run: /home/runner/.local/bin/cpplint --extensions=ino *.ino
   build:
     runs-on: ubuntu-20.04
     steps:
