@@ -22,7 +22,7 @@ jobs:
       - name: Add .local/bin to path
         run: echo "${HOME}/.local/bin" >> $GITHUB_PATH
       - name: Run cpplint
-        run: cpplint --extensions=ino *.ino
+        run: make lint
   build:
     runs-on: ubuntu-20.04
     steps:
