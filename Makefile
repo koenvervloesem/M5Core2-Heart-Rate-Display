@@ -1,9 +1,11 @@
+SHELL := /usr/bin/env bash
+
 BUILD_DIR = "${PWD}/build"
 BOARD = m5stack:esp32:m5stack-core2
 CORE_VERSION = 1.0.5
 SKETCH = M5Core2-Heart-Rate-Display.ino
 
-.PHONY: build clean lint libraries platform requirements
+.PHONY: build clean format lint libraries platform requirements
 
 build:
 	arduino-cli compile -b $(BOARD) --build-path $(BUILD_DIR) $(SKETCH)
@@ -11,8 +13,11 @@ build:
 clean:
 	rm -r $(BUILD_DIR)
 
+format:
+	clang-format -i $(SKETCH)
+
 lint:
-	cpplint --extensions=ino $(SKETCH)
+	diff $(SKETCH) <(clang-format $(SKETCH)) 1>&2
 
 libraries:
 	arduino-cli lib install M5Core2 NimBLE-Arduino

@@ -12,24 +12,20 @@ on:
       - '.github/workflows/*.yml'
 
 jobs:
-  arduino-lint:
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v2
-      - uses: arduino/arduino-lint-action@v1
-        with:
-          compliance: strict
-  cpplint:
+  lint:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Install cpplint
-        run: pip3 install cpplint
-      - name: Add .local/bin to path
-        run: echo "${HOME}/.local/bin" >> $GITHUB_PATH
-      - name: Run cpplint
-        run: make lint
+      - name: Run arduino-lint
+        uses: arduino/arduino-lint-action@v1
+        with:
+          compliance: strict
+      - name: Run clang-format
+        run: |
+          sudo apt update
+          sudo apt install clang-format
+          make lint
   build:
     runs-on: ubuntu-20.04
     steps:
@@ -43,7 +39,7 @@ jobs:
         run: make platform
       - name: Install libraries
         run: make libraries
-      - name: Install pyserial
-        run: pip3 install pyserial
+      - name: Install requirements
+        run: make requirements
       - name: Compile Sketch
         run: make build
