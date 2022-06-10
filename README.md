@@ -41,6 +41,10 @@ arduino-cli upload -p /dev/ttyUSB0 -b m5stack:esp32:m5stack-core2 -i $PWD/build/
 * Let the user choose the heart rate sensor to connect with.
 * Send heart rate measurements to MQTT for further processing and visualization.
 
+## Learn more about Bluetooth Low Energy development
+
+If you want to learn more about Bluetooth Low Energy development, read my book [Develop your own Bluetooth Low Energy Applications for Raspberry Pi, ESP32 and nRF52 with Python, Arduino and Zephyr](https://koen.vervloesem.eu/books/develop-your-own-bluetooth-low-energy-applications/) and the accompanying GitHub repository [koenvervloesem/bluetooth-low-energy-applications](https://github.com/koenvervloesem/bluetooth-low-energy-applications).
+
 ## License
 
 This project is provided by [Koen Vervloesem](mailto:koen@vervloesem.eu) as open source software with the MIT license. See the [LICENSE](LICENSE) file for more information.
